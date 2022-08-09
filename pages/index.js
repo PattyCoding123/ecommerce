@@ -1,8 +1,9 @@
 import React from 'react'
 
+import { client } from '../lib/client'
 import { Product, FooterBanner, HeroBanner } from '../components'
 
-const Home = () => {
+const Home = ({ productsData, bannerData }) => {
   return (
     /* 
       The Home Page will have a few sections:
@@ -12,7 +13,16 @@ const Home = () => {
       4. A Sale banner
     */
     <>
-      <HeroBanner />
+      {
+        /* 
+          For the HeroBanner, we will be passing in the data we
+          fetched from the Sanity client into the component as
+          props IF data does actually exist. Since Sanity returns
+          an array of Banner objects, we will access one of the
+          banner documents with indexing.
+        */
+      }
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
 
       {/*
         This div will an h2 and p element that will describe
@@ -28,15 +38,34 @@ const Home = () => {
       {/*
         This div will contain a mapping of product components that
         the user can click to take to their respective pages.
+
+        The product component will be mapped with the id serving as
+        the key, and we will also pass the entire object element
+        as a prop.
       */}
       <div className="products-container">
-        {['Product 1', 'Product 2'].map(
-          (product) => product)}
+        {productsData?.map(
+          (product) => <Product key={product._id} product={product}/>)}
       </div>
 
-      <FooterBanner />
+      {/*
+        The FooterBanner component will have a prop similar to the
+        HeroBanner in which we will only pass in IF there it actually
+        exists.
+      */}
+      <FooterBanner footerBanner={bannerData.length && bannerData[0]}/>
     </>
   )
 }
 
+export const getServerSideProps = async () => {
+  const productsQuery = '*[_type == "product"]'
+  const productsData = await client.fetch(productsQuery)
+  const bannerQuery = '*[_type == "banner"]'
+  const bannerData = await client.fetch(bannerQuery)
+
+  return {
+    props: { productsData, bannerData }
+  }
+}
 export default Home
