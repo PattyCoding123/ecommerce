@@ -20,7 +20,7 @@ const Product = ({ product: { image, name, slug, price }}) => {
     */
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div className={styles.product_card}>
+        <div className={styles["product__card"]}>
           {/*
             The image will be conditionally rendered
             as long as there is an actual image inside
@@ -40,8 +40,8 @@ const Product = ({ product: { image, name, slug, price }}) => {
             Below the image, we will display the product's name
             and the price of the product.
           */}
-          <p className={styles.product_name}>{name}</p>
-          <p className={styles.product_price}>${price}</p>
+          <p className={styles["product__card-name"]}>{name}</p>
+          <p className={styles["product__card-price"]}>${price}</p>
 
         </div>
       </Link>
