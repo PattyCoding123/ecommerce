@@ -27,15 +27,15 @@ const FooterBanner = ({ footerBanner: {
   */
   
   return (
-    <div className={styles.footer_banner_container}>
-       <div className={styles.left}>
+    <div className={styles["footer__banner-container"]}>
+       <div className={styles["footer__banner-left"]}>
          <p>{discount}</p>
          <h3>{largeText1}</h3>
          <h3>{largeText2}</h3>
          <p>{saleTime}</p>
        </div>
 
-       <div className={styles.right}>
+       <div className={styles["footer__banner-right"]}>
          <p>{smallText}</p>
          <h3>{midText}</h3>
          <p>{desc}</p>
