@@ -1,7 +1,7 @@
 /* 
   For the footer container div, we want to give some padding, 
   a blue background color, some rounding on the corners, 
-  relative positioning, a set-height, white text color,
+  relative positioning, a set-height of 400x, white text color,
   and some padding at the top.
 
   Since the width is 100% it should take up the entire screen's
@@ -106,8 +106,8 @@
   }
 
   h3 {
-    font-weight: 800;
     font-size: 60px;
+    font-weight: 800;
   }
 
   .company_description {
@@ -147,11 +147,9 @@
     }
   }
 
+  // For smaller screens, decrease the font-size of the <h3>
+  // element and provide no weight for the company description.
   @media screen and (max-width:800px) {
-    p {
-      font-size: 18px;
-    }
-
     h3 {
       font-size: 45px;
     }

@@ -1,3 +1,11 @@
+/*
+    For the hero-banner, we will have padding in order to make
+    the text not appear at the edge of the div. We will have a nice
+    background color, rounded edges, a set height of 500px, and
+    a new line-height.
+
+    Since the width is 100%, it should take up the entire screen.
+*/
 .hero_banner_container {
     padding: 100px 40px;
     background-color: #dcdcdc;
@@ -7,22 +15,33 @@
     line-height: 0.9; 
     width: 100%;
   
+    // Product's small text should have a fix size of 20px.
     .solo_product {
         font-size: 20px;
     }
 
+    // The <h1> element contains one of the product's large text,
+    // so it should have a really huge font size to make it pop out.
     h1 {
         color: white;
         font-size: 10em;
         margin-left: -20px;
-        text-transform: uppercase;
+        text-transform: uppercase; // Make all letters capitalized.
     }
 
+    // The <h3> element will have a large font size and 
+    // some padding at the top/
     h3 {
         font-size: 4rem;
         margin-top: 4px;
     }
 
+    /*
+        The image will be absolute and will be positioned 20% away from
+        the right of the Hero_Banner_Container div.
+
+        It should also have a set height and width of 450px.
+    */
     img {
         position: absolute;
         top: 0%;
@@ -31,9 +50,21 @@
         height: 450px;
     }
 
+    /*
+        To style the button, there will be some padding to prevent the text
+        from reaching the edges of the button. There will be some rounded 
+        edges, a blue background with white text, no border, and some margin
+        at the top of the button.
+
+        The font-size and font-weight of the text will be greater to help
+        them appear more out of the button.
+
+        When the user hovers over the button, there will be a cursor and
+        some transition effects to make the button pop up.
+    */
     button {
-        border-radius: 15px;
         padding: 10px 16px;
+        border-radius: 15px;
         background-color: blue;
         color: white;
         border: none;
@@ -50,8 +81,19 @@
 
     }
 
+    /*
+        For smaller screens, increase the height of the Hero_Banner_Container
+        while decreasing the font size of the <h1> and <h3> elements.
+
+        Additionally, decrease the image size and position it differently
+        by changing it's displacement away from the top and right of its 
+        position.
+
+        The button should have a margin top of 90px instead of 40px 
+        if this media query is activated.
+
+    */
     @media screen and (max-width:800px) {
-        
         height: 560px;
         line-height: 1.3;
 
