@@ -26,8 +26,12 @@
   display: flex ;
   justify-content: space-between;
 
-  // For the image, make the positioning absolute
-  // (relative to the container's positioning.)
+  /*
+    For the image, make the positioning absolute
+    (relative to the container's positioning.) 
+    This helps make the image appear like it is floating.
+    above the banner.
+  */
   img {
     position: absolute;
     /* top: -35%;
