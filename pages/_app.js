@@ -12,6 +12,15 @@ import { Layout } from '../components'
 
   We can access this nested Component via the { children }
   prop inside Layout.jsx
+
+  Note: 'pageProps' is an object with the initial props that were
+  preloaded for the page using a data fetching method.
+  
+    - For example, the Home page uses server-side rendering. Thus,
+  it uses a data fetching method 'getServerSideProps' to get data 
+  from Sanity in order to preload it on the page. The props we return
+  from that method will be passed in the pageProps when
+  the Home page is the current page being rendered on the screen.
 */
 function MyApp({ Component, pageProps }) {
   return (
