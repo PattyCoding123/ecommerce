@@ -1,7 +1,15 @@
 /* 
   For the footer container div, we want to give some padding, 
   a blue background color, some rounding on the corners, 
-  relative positioning 
+  relative positioning, a set-height, white text color,
+  and some padding at the top.
+
+  Since the width is 100% it should take up the entire screen's
+  width.
+
+  Additionally, make the display flex with space in between each flex
+  item such that the left and right text contents are at the 
+  ends of the divs.
 
 */
 .Footer_Banner_Container {
@@ -18,28 +26,17 @@
   display: flex ;
   justify-content: space-between;
 
-  // New stylings for banner
-
-  button {
-    border-radius: 15px;
-    padding: 10px 16px;
-    background-color: white;
-    color: blue;
-    border: none;
-    margin-top: 40px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-  }
-
+  // For the image, make the positioning relative to the container.
   img {
     position: absolute;
     /* top: -35%;
     left: 8%; */
-    top: -25%;
-    left: 25%;
+    top: -25%; // Make image go up
+    left: 25%; // Make image go to the right
   }
 
+  // For smaller screens, make the div have a larger height, less top
+  // padding, and make a gap between the items with flex-wrap as wrap.
   @media screen and (max-width:800px) {
     height: 560px;
     margin-top: 80px;
@@ -48,6 +45,7 @@
     flex-wrap: wrap;
     gap: 20px;
 
+    // Change how the image looks on smaller screens.
     img {
       width: 77%;
       left: 30%;
@@ -57,6 +55,15 @@
   }
 }
 
+/*
+  This div is a flex item and so will be resized according to the
+  contents inside.
+
+  We will make the <p> element have some margin all around.
+
+  <h3> element (displays large text) should have more font-weight to appear
+  bolder, a larger font size, and margin on the left 
+*/
 .left {
   p {
     margin:18px;
@@ -65,22 +72,32 @@
   h3 {
     font-weight: 900;
     font-size: 80px;
-    margin-left: 25px;
+    margin-left: 18px; // Match <p> padding
   }
 
+  // For smaller screens, make the <h3> text have more weight
+  // but a little smaller and with less margin-left.
   @media screen and (max-width:800px) {
     h3 {
       font-weight: 900;
       font-size: 50px;
       margin-left: 5px;
     }
-
-    p {
-      margin:18px;
-    }
   }
 }
-  
+
+/*
+  This div is a flex item and so will be resized according to the
+  contents inside.
+
+  We will make the <p> element have a set font size of 18px.
+
+  <h3> element (displays large text) should have more font-weight to appear
+  bolder, a larger font size.
+
+  The company description text should have a set font-size of 14px and 
+  more font weight to appear a little bolder.
+*/
 .right{
   line-height: 1.4;
 
@@ -96,6 +113,38 @@
   .company_description {
     font-size: 14px;
     font-weight: 300;
+  }
+
+  /*
+    For the button, make the borders rounded and have some padding 
+    to give some space between the text and the outer edges.
+
+    We want the background to be white but the text color blue.
+    The text will have a greater weight to appear bolder.
+
+    There should be no border, a margin-top of 40px.
+
+    Also, the cursor should be pointer if the user hovers over it.
+
+    When the user does hover over the button, increase the size to
+    make it pop out.
+  */
+  button {
+    border-radius: 15px;
+    padding: 10px 16px;
+    background-color: white;
+    color: blue;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
   }
 
   @media screen and (max-width:800px) {
