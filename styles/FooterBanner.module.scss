@@ -12,7 +12,7 @@
   ends of the divs.
 
 */
-.Footer_Banner_Container {
+.footer__banner-container {
   padding: 100px 40px;
   background-color: #2147f1;
   border-radius: 15px;
@@ -69,7 +69,7 @@
   <h3> element (displays large text) should have more font-weight to appear
   bolder, a larger font size, and margin on the left 
 */
-.left {
+.footer__banner-left {
   p {
     margin:18px;
   }
@@ -100,10 +100,8 @@
   <h3> element (displays large text) should have more font-weight to appear
   bolder, a larger font size.
 
-  The company description text should have a set font-size of 14px and 
-  more font weight to appear a little bolder.
 */
-.right {
+.footer__banner-right {
   line-height: 1.4;
 
   p {
@@ -113,11 +111,6 @@
   h3 {
     font-size: 60px;
     font-weight: 800;
-  }
-
-  .company_description {
-    font-size: 14px;
-    font-weight: 300;
   }
 
   /*
@@ -152,16 +145,12 @@
     }
   }
 
-  // For smaller screens, decrease the font-size of the <h3>
-  // element and provide no weight for the company description.
+  // For smaller screens, decrease the font-size of the <h3> element.
   @media screen and (max-width:800px) {
     h3 {
       font-size: 45px;
     }
 
-    .company_description {
-      font-size: 14px;
-    }
   }
 
 }
