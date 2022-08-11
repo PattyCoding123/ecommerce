@@ -1,6 +1,12 @@
-.container {
+/* 
+  For the footer container div, we want to give some padding, 
+  a blue background color, some rounding on the corners, 
+  relative positioning 
+
+*/
+.Footer_Banner_Container {
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #2147f1;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -18,7 +24,7 @@
     border-radius: 15px;
     padding: 10px 16px;
     background-color: white;
-    color: red;
+    color: blue;
     border: none;
     margin-top: 40px;
     font-size: 18px;
@@ -33,6 +39,22 @@
     top: -25%;
     left: 25%;
   }
+
+  @media screen and (max-width:800px) {
+    height: 560px;
+    margin-top: 80px;
+
+    // For original banner-description div
+    flex-wrap: wrap;
+    gap: 20px;
+
+    img {
+      width: 77%;
+      left: 30%;
+      top: 6%;
+      height: 56%
+    }
+  }
 }
 
 .left {
@@ -44,6 +66,18 @@
     font-weight: 900;
     font-size: 80px;
     margin-left: 25px;
+  }
+
+  @media screen and (max-width:800px) {
+    h3 {
+      font-weight: 900;
+      font-size: 50px;
+      margin-left: 5px;
+    }
+
+    p {
+      margin:18px;
+    }
   }
 }
   
@@ -59,9 +93,23 @@
     font-size: 60px;
   }
 
-  .company-description {
+  .company_description {
     font-size: 14px;
     font-weight: 300;
+  }
+
+  @media screen and (max-width:800px) {
+    p {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 45px;
+    }
+
+    .company_description {
+      font-size: 14px;
+    }
   }
 
 }

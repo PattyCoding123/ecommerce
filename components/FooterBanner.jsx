@@ -27,7 +27,7 @@ const FooterBanner = ({ footerBanner: {
   */
   
   return (
-    <div className={styles.container}>
+    <div className={styles.Footer_Banner_Container}>
        <div className={styles.left}>
          <p>{discount}</p>
          <h3>{largeText1}</h3>
