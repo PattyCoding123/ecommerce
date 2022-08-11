@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { urlFor } from '../lib/client'
+import { urlFor } from '../lib/client' 
+import styles from '../styles/FooterBanner.module.scss'
 
 // Destructure the footerBanner prop into all its components.
 const FooterBanner = ({ footerBanner: {
@@ -26,29 +27,26 @@ const FooterBanner = ({ footerBanner: {
   */
   
   return (
-    <div className="footer-banner-container">
-      <div className="banner-description">
-        <div className="left">
-          <p>{discount}</p>
-          <h3>{largeText1}</h3>
-          <h3>{largeText2}</h3>
-          <p>{saleTime}</p>
-        </div>
+    <div className={styles.Footer_Banner_Container}>
+       <div className={styles.left}>
+         <p>{discount}</p>
+         <h3>{largeText1}</h3>
+         <h3>{largeText2}</h3>
+         <p>{saleTime}</p>
+       </div>
 
-        <div className="right">
-          <p>{smallText}</p>
-          <h3>{midText}</h3>
-          <p>{desc}</p>
-          <Link href={`/product/${product}`}>
-            <button type="button">{buttonText}</button>
-          </Link>
-        </div>
+       <div className={styles.right}>
+         <p>{smallText}</p>
+         <h3>{midText}</h3>
+         <p>{desc}</p>
+         <Link href={`/product/${product}`}>
+           <button type="button">{buttonText}</button>
+         </Link>
+       </div>
 
-        <img 
-          src={urlFor(image)}
-          className="footer-banner-image" alt="banner-product"
-        />
-      </div>
+       <img 
+         src={urlFor(image)} alt="banner-product"
+       />
     </div>
   )
 }
