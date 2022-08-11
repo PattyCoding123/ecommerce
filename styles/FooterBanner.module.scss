@@ -4,15 +4,15 @@
   relative positioning, a set-height of 400x, white text color,
   and some padding at the top.
 
-  Since the width is 100% it should take up the entire screen's
-  width.
+  Since the width is 100% it should take up the entire
+  width of whatever container it is in!
 
   Additionally, make the display flex with space in between each flex
   item such that the left and right text contents are at the 
   ends of the divs.
 
 */
-.Footer_Banner_Container {
+.footer__banner-container {
   padding: 100px 40px;
   background-color: #2147f1;
   border-radius: 15px;
@@ -26,8 +26,12 @@
   display: flex ;
   justify-content: space-between;
 
-  // For the image, make the positioning absolute
-  // (relative to the container's positioning.)
+  /*
+    For the image, make the positioning absolute
+    (relative to the container's positioning.) 
+    This helps make the image appear like it is floating.
+    above the banner.
+  */
   img {
     position: absolute;
     /* top: -35%;
@@ -65,7 +69,7 @@
   <h3> element (displays large text) should have more font-weight to appear
   bolder, a larger font size, and margin on the left 
 */
-.left {
+.footer__banner-left {
   p {
     margin:18px;
   }
@@ -96,10 +100,8 @@
   <h3> element (displays large text) should have more font-weight to appear
   bolder, a larger font size.
 
-  The company description text should have a set font-size of 14px and 
-  more font weight to appear a little bolder.
 */
-.right {
+.footer__banner-right {
   line-height: 1.4;
 
   p {
@@ -109,11 +111,6 @@
   h3 {
     font-size: 60px;
     font-weight: 800;
-  }
-
-  .company_description {
-    font-size: 14px;
-    font-weight: 300;
   }
 
   /*
@@ -148,16 +145,12 @@
     }
   }
 
-  // For smaller screens, decrease the font-size of the <h3>
-  // element and provide no weight for the company description.
+  // For smaller screens, decrease the font-size of the <h3> element.
   @media screen and (max-width:800px) {
     h3 {
       font-size: 45px;
     }
 
-    .company_description {
-      font-size: 14px;
-    }
   }
 
 }

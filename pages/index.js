@@ -58,6 +58,14 @@ const Home = ({ productsData, bannerData }) => {
   )
 }
 
+/*
+  getServerSideProps is the function we need in order to utilize Data Fetching
+  in a Next.js project. (Essentially, it will pre-fetch the data from the API before 
+  the page is rendered.)
+
+  The props that we will return will be injected into the Home page because
+  of the custom _app component that passes a 'pageProps' object.
+*/
 export const getServerSideProps = async () => {
   const productsQuery = '*[_type == "product"]'
   const productsData = await client.fetch(productsQuery)

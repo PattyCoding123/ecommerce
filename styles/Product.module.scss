@@ -3,7 +3,7 @@
     is hovering over the item. Additionally, when hovered over, the card
     will increase in size as to appear popping out of the screen.
 */
-.product_card{
+.product__card{
     cursor: pointer;
     transition: all 0.5s ease;
     color: #324d67;
@@ -24,13 +24,13 @@
     }
 
     // For the product name, make the text bolder.
-    .product_name{
+    .product__card-name{
         font-weight: 500;
     }
       
     // For the product price, make the text bolder and 
     // give some margin at the top to avoid the product_name.
-    .product_price{
+    .product__card-price{
         font-weight: 800;
         margin-top: 6px;
         color: black;

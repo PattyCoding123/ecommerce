@@ -1,0 +1,32 @@
+/*
+  For the footer container, we want to make sure to align the text
+  in the center of the footer while giving it some weight to 
+  appear bolder. Also, we want the children items as flex so that they
+  re-position themselves accordingly. They will be displayed in
+  column so that the description of the page goes on top.
+*/
+.footer__container{
+    color: #324d67;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px 10px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  
+}
+  
+/*
+  For the footer icons, we will increase their size by 
+  increasing the <p> element's font-size. Additionally,
+  we will make the items be displayed as flex items and
+  include a gap so that they aren't right next to eachother.
+*/
+.footer__container-icons{
+    font-size: 30px;
+    display: flex;
+    gap: 10px;
+}
