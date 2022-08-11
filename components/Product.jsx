@@ -12,6 +12,12 @@ const Product = ({ product: { image, name, slug, price }}) => {
       The component will be a div that contains a Link 
       element from Next.js
 
+      That link element's href will be targeted towards
+      a specific "slug", which is the product's unique
+      page identifier. Thus, if we click on one of the
+      product images, we will be taken towards their
+      unique details page because of the slug.
+
       Inside the link, another div will be rendered which acts
       as the "product card" or the rectangular displays of the
       products on the webpage.
@@ -19,6 +25,11 @@ const Product = ({ product: { image, name, slug, price }}) => {
       Each "card" will contain an image element.
     */
     <div>
+      {/*
+        Notice how the href will is in the form a string
+        template so that we can be taken to the product's
+        details page using the slug.
+      */}
       <Link href={`/product/${slug.current}`}>
         <div className={styles["product__card"]}>
           {/*
