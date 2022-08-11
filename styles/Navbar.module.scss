@@ -1,0 +1,61 @@
+/*
+    For the navbar__container, we will make the display flex
+    and have space-between in order to separate the page name and
+    the shopping bag icon on separate ends.
+
+    We also want to keep positioning relative.
+*/
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 18px;
+    position: relative;
+}
+
+// For the logo, make the text appear grey and a little larger.
+.navbar__logo{
+    color: gray;
+    font-size: 18px;
+}
+
+/*
+    For the cart icon, we will make the icon larger 
+    by increasing the font size. We will also allow it to
+    have relative positioning.
+
+    When the user hovers over the bag icon, the cursor will
+    be a pointer and it will scale up in size.
+*/
+.navbar__shopping-icon{
+    font-size: 25px;
+    color: gray;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s ease;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        transform: scale(1.1,1.1);
+    }
+}
+
+/*
+    For the cart-item quantity, we want the positioning to be
+    absolute (so it is relative to the shopping bag icon).
+
+    It will appear like a red circle with a number!
+*/
+.navbar__item-qty{
+    position: absolute;
+    right: -8px;
+    font-size: 12px;
+    color: #eee;
+    background-color: #f02d34;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; // Create's circular div
+    text-align: center;
+    font-weight: 600;
+}
+
