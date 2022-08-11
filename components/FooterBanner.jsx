@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { urlFor } from '../lib/client'
+import { urlFor } from '../lib/client' 
+import styles from '../styles/FooterBanner.module.scss'
 
 // Destructure the footerBanner prop into all its components.
 const FooterBanner = ({ footerBanner: {
@@ -26,15 +27,15 @@ const FooterBanner = ({ footerBanner: {
   */
   
   return (
-    <div className="footer-banner-container">
-       <div className="left">
+    <div className={styles.container}>
+       <div className={styles.left}>
          <p>{discount}</p>
          <h3>{largeText1}</h3>
          <h3>{largeText2}</h3>
          <p>{saleTime}</p>
        </div>
 
-       <div className="right">
+       <div className={styles.right}>
          <p>{smallText}</p>
          <h3>{midText}</h3>
          <p>{desc}</p>
@@ -44,8 +45,7 @@ const FooterBanner = ({ footerBanner: {
        </div>
 
        <img 
-         src={urlFor(image)}
-         className="footer-banner-image" alt="banner-product"
+         src={urlFor(image)} alt="banner-product"
        />
     </div>
   )

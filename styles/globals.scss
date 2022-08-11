@@ -233,73 +233,73 @@ text-align: end;
   font-weight: 200;
 }
 
-.footer-banner-container{
-  padding: 100px 40px;
-  background-color: #f02d34;
-  border-radius: 15px;
-  position: relative;
-  height: 400px;
-  line-height: 1; 
-  color: white;
-  width: 100%;
-  margin-top: 120px;
+// .footer-banner-container{
+//   padding: 100px 40px;
+//   background-color: #f02d34;
+//   border-radius: 15px;
+//   position: relative;
+//   height: 400px;
+//   line-height: 1; 
+//   color: white;
+//   width: 100%;
+//   margin-top: 120px;
 
-  display: flex ;
-  justify-content: space-between;
+//   display: flex ;
+//   justify-content: space-between;
 
-  // New stylings for banner
+//   // New stylings for banner
 
-  .left {
-    p {
-      margin:18px;
-    }
+//   .left {
+//     p {
+//       margin:18px;
+//     }
 
-    h3 {
-      font-weight: 900;
-      font-size: 80px;
-      margin-left: 25px;
-    }
-  }
+//     h3 {
+//       font-weight: 900;
+//       font-size: 80px;
+//       margin-left: 25px;
+//     }
+//   }
 
-  .right{
-    line-height: 1.4;
+//   .right{
+//     line-height: 1.4;
 
-    p {
-      font-size: 18px;
-    }
+//     p {
+//       font-size: 18px;
+//     }
 
-    h3 {
-      font-weight: 800;
-      font-size: 60px;
-    }
+//     h3 {
+//       font-weight: 800;
+//       font-size: 60px;
+//     }
 
-    .company-description {
-      font-size: 14px;
-      font-weight: 300;
-    }
+//     .company-description {
+//       font-size: 14px;
+//       font-weight: 300;
+//     }
 
-  }
+//   }
 
-  button {
-    border-radius: 15px;
-    padding: 10px 16px;
-    background-color: white;
-    color: red;
-    border: none;
-    margin-top: 40px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-  }
+//   button {
+//     border-radius: 15px;
+//     padding: 10px 16px;
+//     background-color: white;
+//     color: red;
+//     border: none;
+//     margin-top: 40px;
+//     font-size: 18px;
+//     font-weight: 500;
+//     cursor: pointer;
+//   }
 
-  .footer-banner-image{
-    position: absolute;
-    /* top: -35%;
-    left: 8%; */
-    top: -25%;
-    left: 25%;
-  }
-}
+//   .footer-banner-image{
+//     position: absolute;
+//     /* top: -35%;
+//     left: 8%; */
+//     top: -25%;
+//     left: 25%;
+//   }
+// }
 
 // .banner-description{
 //   display: flex ;
@@ -307,17 +307,18 @@ text-align: end;
 // }
 
 
-.banner-description button{
-  border-radius: 15px;
-  padding: 10px 16px;
-  background-color: white;
-  color: red;
-  border: none;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-}
+// .banner-description button{
+//   border-radius: 15px;
+//   padding: 10px 16px;
+//   background-color: white;
+//   color: red;
+//   border: none;
+//   margin-top: 40px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   cursor: pointer;
+// }
+
 // .banner-description .left h3{
 //   font-weight: 900;
 //   font-size: 80px;
@@ -346,10 +347,10 @@ text-align: end;
 // .banner-description .right p{
 //   font-size: 18px;
 // }
-.banner-description .right .company-description{
-  font-size: 14px;
-  font-weight: 300;
-}
+// .banner-description .right .company-description{
+//   font-size: 14px;
+//   font-weight: 300;
+// }
 .cart-wrapper{
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
