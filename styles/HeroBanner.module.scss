@@ -6,7 +6,7 @@
 
     Since the width is 100%, it should take up the container it is in.
 */
-.hero_banner_container {
+.hero__banner-container {
     padding: 100px 40px;
     background-color: #dcdcdc;
     border-radius: 15px;
@@ -16,7 +16,7 @@
     width: 100%;
   
     // Product's small text should have a fix size of 20px.
-    .solo_product {
+    .hero__banner-product {
         font-size: 20px;
     }
 
@@ -122,7 +122,7 @@
     }
 }
 
-.description {
+.hero__banner-desc {
     position: absolute;
     right: 10%;
     bottom: 5%;
