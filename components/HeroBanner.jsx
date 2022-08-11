@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { urlFor } from '../lib/client'
+import styles from '../styles/HeroBanner.module.scss'
 
 const HeroBanner = ({ heroBanner }) => {
   return (
@@ -20,14 +21,14 @@ const HeroBanner = ({ heroBanner }) => {
       the data will be coming from whatever was passed into the
       heroBanner object by Sanity.
     */
-    <div className="hero-banner-container">
+    <div className={styles.hero_banner_container}>
       <div>
-        <p className="solo-product">
+        <p className={styles.solo_product}>
           {heroBanner.smallText}
         </p>
         <h3>{heroBanner.midText}</h3>
         <h1>{heroBanner.largeText1}</h1>
-        <img src={urlFor(heroBanner.image)} alt="banner-product" className="hero-banner-image" />
+        <img src={urlFor(heroBanner.image)} alt="banner-product"/>
 
 
         {/*
@@ -38,7 +39,7 @@ const HeroBanner = ({ heroBanner }) => {
           <Link href={`/product/${heroBanner.product}`}>
             <button type="button">{heroBanner.buttonText}</button>
           </Link>
-          <div className="description">
+          <div className={styles.description}>
             <h5>Description</h5>
             <p>{heroBanner.desc}</p>
           </div>
