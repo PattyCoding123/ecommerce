@@ -21,9 +21,9 @@ const HeroBanner = ({ heroBanner }) => {
       the data will be coming from whatever was passed into the
       heroBanner object by Sanity.
     */
-    <div className={styles.hero_banner_container}>
+    <div className={styles["hero__banner-container"]}>
       <div>
-        <p className={styles.solo_product}>
+        <p className={styles["hero__banner-product"]}>
           {heroBanner.smallText}
         </p>
         <h3>{heroBanner.midText}</h3>
@@ -39,7 +39,7 @@ const HeroBanner = ({ heroBanner }) => {
           <Link href={`/product/${heroBanner.product}`}>
             <button type="button">{heroBanner.buttonText}</button>
           </Link>
-          <div className={styles.description}>
+          <div className={styles.["hero__banner-desc"]}>
             <h5>Description</h5>
             <p>{heroBanner.desc}</p>
           </div>
