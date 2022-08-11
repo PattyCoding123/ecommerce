@@ -1,0 +1,40 @@
+/*
+    The product_card div will have the pointer be a cursor when the user
+    is hovering over the item. Additionally, when hovered over, the card
+    will increase in size as to appear popping out of the screen.
+*/
+.product_card{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: #324d67;
+
+    &:hover {
+        transform: scale(1.1,1.1);
+    }
+
+    /*
+        The nested image element already will have rounded edges
+        and a background color that is slightly gray.
+
+        The height and width are already set in the Product.jsx
+    */
+    img {
+        border-radius: 15px;
+        background-color: #ebebeb;
+    }
+
+    // For the product name, make the text bolder.
+    .product_name{
+        font-weight: 500;
+    }
+      
+    // For the product price, make the text bolder and 
+    // give some margin at the top to avoid the product_name.
+    .product_price{
+        font-weight: 800;
+        margin-top: 6px;
+        color: black;
+    }
+
+}
+
