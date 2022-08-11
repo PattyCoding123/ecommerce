@@ -704,15 +704,19 @@ margin-top: 160px;
 }
 
 @media screen and (max-width:800px) {
-  .hero-banner-container{
-    height: 560px;
-  }
-  .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
-  }
+  // Note: no idea why it's being separated here.
+  // .hero-banner-container{
+  //   height: 560px;
+  // }
+
+  // Separated from hero-banner-container near
+  // the middle for some reason?????
+  // .hero-banner-image{
+  //   width: 77%;
+  //   height: 62%;
+  //   top: -2%;
+  //   right: -6%;
+  // }
 
   // .footer-banner-container{
   //   height: 560px;
