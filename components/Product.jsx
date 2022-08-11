@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link' // We will use to link to the product's page
 
 import { urlFor } from '../lib/client'
+import styles from '../styles/Product.module.scss'
 
 // We will destruct the prop into its components
 const Product = ({ product: { image, name, slug, price }}) => {
@@ -19,7 +20,7 @@ const Product = ({ product: { image, name, slug, price }}) => {
     */
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div className="product-card">
+        <div className={styles.product_card}>
           {/*
             The image will be conditionally rendered
             as long as there is an actual image inside
@@ -33,15 +34,14 @@ const Product = ({ product: { image, name, slug, price }}) => {
             width={250} 
             height={250}
             alt={name}
-            className="product-image"
           />
 
           {/*
             Below the image, we will display the product's name
             and the price of the product.
           */}
-          <p className="product-name">{name}</p>
-          <p className="product-price">${price}</p>
+          <p className={styles.product_name}>{name}</p>
+          <p className={styles.product_price}>${price}</p>
 
         </div>
       </Link>

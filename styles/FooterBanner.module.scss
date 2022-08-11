@@ -26,7 +26,8 @@
   display: flex ;
   justify-content: space-between;
 
-  // For the image, make the positioning relative to the container.
+  // For the image, make the positioning absolute
+  // (relative to the container's positioning.)
   img {
     position: absolute;
     /* top: -35%;
@@ -98,7 +99,7 @@
   The company description text should have a set font-size of 14px and 
   more font weight to appear a little bolder.
 */
-.right{
+.right {
   line-height: 1.4;
 
   p {

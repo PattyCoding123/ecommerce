@@ -36,7 +36,7 @@ const Home = ({ productsData, bannerData }) => {
       </div>
 
       {/*
-        This div will contain a mapping of product components that
+        This div will contain a mapping of Product components that
         the user can click to take to their respective pages.
 
         The product component will be mapped with the id serving as
