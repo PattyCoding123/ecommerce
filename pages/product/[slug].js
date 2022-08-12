@@ -4,7 +4,7 @@ AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 import { client, urlFor } from '../../lib/client'
 import { Product } from '../../components'
-
+import { useStateContext } from '../../context/StateContext'
 /* 
   ProductDetails page will be rendered when the user
   clicks an item as the products contain a unique 
@@ -24,7 +24,18 @@ import { Product } from '../../components'
 */
 const ProductDetails = ({ itemData, productsData }) => {
   const { image, name, details, price } = itemData
+
+  /*
+    We will have a state called index which controls what image 
+    we are currently displaying in full size from the array of
+    images that comes with the product.
+
+    Additionally, we will use the quantity state and 
+    the decrease/increase quantity event handlers from
+    our global state context.
+  */
   const [index, setIndex] = useState(0)
+  const { decreaseQty, increaseQty, quantity, onAdd } = useStateContext();
 
   return (
     <>
@@ -103,14 +114,23 @@ const ProductDetails = ({ itemData, productsData }) => {
           */}
           <div className="quantity">
             <h3>Quantity</h3>
+
+            {/*
+              For the 'minus' and 'plus' span, assign an onClick event attribute
+              and pass the decreaseQty and increaseQty event handler functions
+              respectfully. 
+
+              For the 'num' span, display the 'quantity' state from our
+              state context.
+            */}
             <p className="quantity__description">
-              <span className="minus">
+              <span className="minus" onClick={decreaseQty}>
                 <AiOutlineMinus />
               </span>
               <span className="num">
-                0
+                {quantity}
               </span>
-              <span className="plus">
+              <span className="plus" onClick={increaseQty}>
                 <AiOutlinePlus />
               </span>
             </p>
@@ -120,12 +140,16 @@ const ProductDetails = ({ itemData, productsData }) => {
             which will allow the user to add an item to their cart,
             or to buy the item right away and take them to the 
             purchasing screen.
+
+            The add-to-cart button will have an onClick attribute which
+            passes a callback function to invoke the onAdd handler
+            which will add the current item into the cart.
           */}
           <div className="buttons">
             <button 
               type="button"
               className="add-to-cart"
-              onClick=""
+              onClick={() => onAdd(itemData, quantity)}
             >
               Add to Cart
             </button>

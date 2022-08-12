@@ -3,10 +3,14 @@ import Link from 'next/link'
 
 import { urlFor } from '../lib/client'
 import styles from '../styles/HeroBanner.module.scss'
+import { useStateContext } from '../context/StateContext'
 
 const HeroBanner = ({ heroBanner }) => {
   const { smallText, midText, largeText1, image, 
     product, buttonText, desc } = heroBanner
+
+  // Get StateContext's resetQty event handler.
+  const { resetQty } = useStateContext();
     
   return (
     /*
@@ -36,11 +40,14 @@ const HeroBanner = ({ heroBanner }) => {
 
         {/*
           For the hero banner, make the link href property take a dynamic
-          string which changes depending on the heroBanner's product field
+          string which changes depending on the heroBanner's product field.
+
+          Additionally, whenever the user clicks on the button to buy
+          the product, it will reset the quantity state to 1.
         */}
         <div>
           <Link href={`/product/${product}`}>
-            <button type="button">{buttonText}</button>
+            <button type="button" onClick={resetQty}>{buttonText}</button>
           </Link>
           <div className={styles["hero__banner-desc"]}>
             <h5>Description</h5>

@@ -3,9 +3,11 @@ import Link from 'next/link' // We will use to link to the product's page
 
 import { urlFor } from '../lib/client'
 import styles from '../styles/Product.module.scss'
+import { useStateContext } from '../context/StateContext'
 
 // We will destruct the prop into its components
 const Product = ({ product: { image, name, slug, price }}) => {
+  const { resetQty } = useStateContext();
 
   return (
     /*
@@ -26,17 +28,21 @@ const Product = ({ product: { image, name, slug, price }}) => {
     */
     <div>
       {/*
-        Notice how the href will is in the form a string
-        template so that we can be taken to the product's
-        details page using the slug.
+        Notice how the href is in the form of a string
+        template which will allow us to be taken to the product's
+        details page using its slug.
 
         Because it is wrapped around the div of the product
         card on the home page, the user can click on 
         anywhere on the product card and it will take
         them to the product's slug page.
+
+        Additionally, whenever the user clicks on the div
+        for the link, it will activate the resetQty function
+        which resets the global item state to 1.
       */}
       <Link href={`/product/${slug.current}`}>
-        <div className={styles["product__card"]}>
+        <div className={styles["product__card"]} onClick={resetQty}>
           {/*
             The image will be conditionally rendered
             as long as there is an actual image inside
