@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { urlFor } from '../lib/client'
 import styles from '../styles/HeroBanner.module.scss'
 
-const HeroBanner = ({ heroBanner: { smallText, midText, largeText1, image, 
-   product, buttonText, desc } }) => {
+const HeroBanner = ({ heroBanner }) => {
+  const { smallText, midText, largeText1, image, 
+    product, buttonText, desc } = heroBanner
+    
   return (
     /*
       The following div is the hero banner container which contains a

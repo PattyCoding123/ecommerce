@@ -5,10 +5,10 @@ import { urlFor } from '../lib/client'
 import styles from '../styles/FooterBanner.module.scss'
 
 // Destructure the footerBanner prop into all its components.
-const FooterBanner = ({ footerBanner: {
-  discount, largeText1, largeText2, saleTime, 
-  smallText, midText, product, buttonText, image, desc} }) => {
-
+const FooterBanner = ({ footerBanner }) => {
+  const { discount, largeText1, largeText2, saleTime, 
+    smallText, midText, product, buttonText, image, desc }
+    = footerBanner
   /*
     The FooterBanner Component will have 1 div acting as the main
     div which will have another div(banner-desc) that contains all the 

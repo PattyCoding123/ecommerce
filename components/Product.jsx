@@ -29,6 +29,11 @@ const Product = ({ product: { image, name, slug, price }}) => {
         Notice how the href will is in the form a string
         template so that we can be taken to the product's
         details page using the slug.
+
+        Because it is wrapped around the div of the product
+        card on the home page, the user can click on 
+        anywhere on the product card and it will take
+        them to the product's slug page.
       */}
       <Link href={`/product/${slug.current}`}>
         <div className={styles["product__card"]}>
@@ -53,7 +58,6 @@ const Product = ({ product: { image, name, slug, price }}) => {
           */}
           <p className={styles["product__card-name"]}>{name}</p>
           <p className={styles["product__card-price"]}>${price}</p>
-
         </div>
       </Link>
     </div>
