@@ -28,9 +28,9 @@ a {
   how we can get the white space on both sides of the screen.
 */
 .main__container{
-max-width: 1400px; 
-margin: auto;
-width: 100%;
+  max-width: 1400px; 
+  margin: auto;
+  width: 100%;
 
 }
 
@@ -43,40 +43,9 @@ width: 100%;
   padding: 10px;
 }
 
-.marquee-text{
-  font-size: 29px;
-  font-weight: 600;
-  margin: 60px 0px;
-  color: #f02d34;
-}
-
-.marquee {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 15s linear infinite;
-  width: 180%;
-}
-
-.track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
- span.text-red {
-    -webkit-text-stroke: 1px #f02d34;
-    margin-left: 6px;
+span.text-blue {
+  -webkit-text-stroke: 1px blue;
+  margin-left: 6px;
 }
 
 /*
@@ -216,7 +185,8 @@ width: 100%;
   }
   
 }
-.total{
+
+.total {
   display: flex;
   justify-content: space-between;
 }
@@ -226,7 +196,7 @@ width: 100%;
 
 }
 
-.remove-item{
+.remove-item {
   font-size: 24px;
   color: #f02d34;
   cursor: pointer;
@@ -261,7 +231,7 @@ padding: 30px 65px;
   background-color: #f02d34;
   color: #fff;
   cursor: pointer;
-    transform: scale(1, 1);
+  transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
 
@@ -269,33 +239,54 @@ padding: 30px 65px;
   transform: scale(1.1,1.1);
 }
 
-.product-detail-container{
+/*
+  To style the product__detail-container, we will make the display flex such
+  that the image displays and the text information appear side by side and
+  positions themselves accordingly.
+
+  We will also add some margins around the div and add gap to help make the
+  flex items appear more separated.
+*/
+.product__detail-container{
   display: flex;
   gap: 40px;
   margin: 40px;
   margin-top: 60px;
   color: #324d67;
-
 }
 
-.product-detail-image{
+/*
+  For the product__detail-image, have rounded corners and a gray-ish
+  background color while also making it a set height and width. 
+  The cursor should also be a pointer and the transitions should
+  be 0.3s in duration.
+*/
+.product__detail-image{
   border-radius: 15px;
-   background-color: #ebebeb;
+  background-color: #ebebeb;
 
   width: 400px;
   height: 400px;
   cursor: pointer;
   transition: .3s ease-in-out;
-}
-.product-detail-image:hover{
-  background-color: #f02d34;
 
+  // When the image is being hovered over, make the background
+  // of the div blue.
+  &:hover{
+    background-color: blue;
+  }
 }
-.small-images-container{
+
+// The small__images-container will have its children as flex items,
+// and they will have a gap of 10px in order to separate them.
+.small__images-container{
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
+
+// Each small image will be about 70px in width and height.
+// The pointer will also be a cursor when it is being hovered over.
 .small-image{
   border-radius: 8px;
   background-color: #ebebeb;
@@ -304,129 +295,173 @@ padding: 30px 65px;
   cursor: pointer;
 }
 
+// If the small image is the main one being displayed, make
+// its background blue.
 .selected-image{
-  background-color:#f02d34;
+  background-color:blue;
 }
+
+/* 
+  For the reviews, make the color of the star icons blue.
+  Additionally, make the display flex with the children items
+  aligned in the center of the div.
+*/
 .reviews{
-  color: #f02d34;
+  color: blue;
   margin-top: 10px;
   display: flex;
   gap: 5px;
   align-items: center;
+
+  // Make the <p> text color a blueish gray
+  p {
+    color: #324d67;
+    margin-top: 0px;
+  }
 }
 
-.product-detail-description h4{
-  margin-top: 10px;
+/*
+  To style the product__detail-description container. we will
+  make the <h4> and <p> tags have some extra margin. Also,
+  for the price, we want to make the text bolder and larger
+  with higher font-weight and font-size.
+*/
+.product__detail-description {
+  h4, p {
+    margin-top: 10px;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 30px;
+    color: blue;
+
+    .old-price, .product-price .old-price, .price .old-price{
+      color: gray;
+      text-decoration: line-through;
+    }
+  }
+
+  /*
+    For the quantity section of the product__detail-description, we want to display
+    the items in flex such that <h3> and <p> elements are in a row.
+
+    For the quantity__description, we the <p> element to have a solid border
+    and some padding to make it appear as if there are separate boxes
+    to increase and decrease the item quantity.
+  */
+  .quantity {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+
+    .quantity__description {
+      border: 1px solid gray;
+      padding: 6px;
+
+      span {
+        font-size: 16px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+
+      .minus {
+        // To make it seem as if there is a border
+        border-right: 1px solid gray;
+        color: red;
+      }
+
+      .num {
+        // To make it seem as if there is a border
+        border-right: 1px solid gray;
+        font-size: 20px;
+      }
+
+      .plus {
+        color: rgb(49, 168, 49);
+      
+      }
+
+    }
+    
+  }
+ 
 }
 
-.product-detail-description p{
-  margin-top: 10px;
-}
-
-.reviews p{
-  color: #324d67;
-  margin-top: 0px;
-}
-
-.product-detail-description .price{
-  font-weight: 700 ;
-  font-size: 26px;
-  margin-top: 30px;
-  color:#f02d34;
-}
-
-.price .old-price, .product-price .old-price, .price .old-price{
-  color: gray;
-  text-decoration: line-through;
-}
-
-.product-detail-description .quantity{
-  display: flex;
-  gap: 20px;
-  margin-top: 10px ;
-  align-items: center;
-}
-
-.product-detail-description .buttons{
+// For the container with the buttons, we want to display the buttons using
+// flex and to have a gap so they appear more separated.
+.product__detail-description .buttons{
   display: flex;
   gap: 30px;
+
+  /*
+    For the .add-to-cart button, we will style it by giving some padding
+    to have the text not touch the border of the button.
+
+    We also want more font size and font weight and a set width. 
+
+    If the user hovers over the button, it should increase in size subtly.
+  */
+  .add-to-cart {
+    padding: 10px 20px;
+    border: 1px solid blue ;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+    width: 200px;
+    transition: all 0.5s ease;
+
+    &:hover{
+      transform: scale(1.1,1.1)
+    }
+  }
+
+  // We will style the buy-now button similar to the add-to-cart button.
+  .buy-now{
+    width: 200px;
+  
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover{
+      transform:scale(1.1,1.1)
+    }
+    
+  }
 }
 
-.buttons .add-to-cart{
-  padding: 10px 20px;
-  border: 1px solid #f02d34 ;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: white;
-  color: #f02d34;
-  cursor: pointer;
-  width: 200px;
-   transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
-
-.buttons .add-to-cart:hover{
-  transform:scale(1.1,1.1)
-}
-
-.buttons .buy-now{
-  width: 200px;
-
-  padding: 10px 20px;
-  background-color: #f02d34;
-  color: white;
-  border: none;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-   transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
-
-.buttons .buy-now:hover{
-  transform:scale(1.1,1.1)
-}
-
-.quantity-description{
-  border: 1px solid gray;
-padding: 6px;
-}
-
-.quantity-description span{
-  font-size: 16px;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
-.quantity-description .minus{
-  border-right: 1px solid gray;
-  color: #f02d34;
-}
-
-.quantity-description .num{
-  border-right: 1px solid gray;
-  font-size: 20px;
-}
-
-.quantity-description .plus{
-  color: rgb(49, 168, 49);
-
-}
-
+// Style the maylike-products-wrapper by giving some margin at the top
+// and changing the styling of the h2 element.
 .maylike-products-wrapper{
   margin-top: 120px;
+
+  h2 {
+    text-align: center;
+    margin: 50px;
+    color: #324d67;
+  
+    font-size: 28px;
+  }
+
 }
 
-.maylike-products-wrapper h2{
-  text-align: center;
-  margin: 50px;
-  color: #324d67;
-
-  font-size: 28px;
-}
-
+/*
+  For the may-like-products container, have the component be a flex display
+  with all the items center justified. Also, have a gap so the items appear
+  somewhat separated from each other.
+*/
 .maylike-products-container{
   display: flex;
   justify-content: center;
@@ -447,8 +482,8 @@ padding: 6px;
 
 .success, .cancel{
   width: 1000px;
-margin: auto;
-margin-top: 160px;
+  margin: auto;
+  margin-top: 160px;
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
@@ -462,6 +497,7 @@ margin-top: 160px;
    color: green;
    font-size: 40px;
 }
+
 .success h2{
   text-transform: capitalize;
   margin-top: 15px 0px;
@@ -469,90 +505,97 @@ margin-top: 160px;
   font-size: 40px;
   color:#324d67;
 }
+
 .success .email-msg{
    font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
+
 .cancel p{
   font-size: 20px;
   font-weight: 600;
 }
-.success .descriptionription{
+
+.success .description{
   font-size: 16px;
   font-weight: 600;
   text-align: center;
   margin: 10px;
   margin-top: 30px;
 }
-.success .descriptionription .email{
+
+.success .description .email{
   margin-left: 5px;
   color: #f02d34;
 }
+
 .product-max-qty{
   margin-top: 10px;
 }
 
 @media screen and (max-width:800px) {
 
-  .product-detail-container{
+  .product__detail-container {
     flex-wrap: wrap;
+    margin: 20px;
+
+    .product__detail-image {
+      width: 350px;
+      height: 350px;
+    }
   }
 
-  .product-detail-container .product-detail-image{
-    width: 350px;
-    height: 350px;
-  }
-
-  .cart-container{
+  .cart-container {
     width: 415px;
     padding: 4px;
   }
 
-  .cart-heading{
+  .cart-heading {
     margin-top: 35px;
   }
 
-  .product-container{
+  .product-container {
     margin-top: 10px;
   }
 
   .product{
     padding: 20px 5px;
 
+    .cart-product-image {
+      width: 25%;
+      height: 25%;
+    }
   }
 
-  .product .cart-product-image{
-    width: 25%;
-    height: 25%;
-  }
 
-  .buttons .add-to-cart{
-    width: 150px;
-  }
+  .buttons {
+    .add-to-cart {
+      width: 150px;
+    }
 
-  .buttons .buy-now{
-    width: 150px;
-  }
+    .buy-now {
+      width: 150px;
+    }
+  } 
 
-  .product-detail-container{
-    margin: 20px;
-  }
+  .item-description {
+    .flex {
+      width: 200px;
+    }
 
-  .item-description .flex{
-    width: 200px;
+    .bottom {
+      margin-top: 30px;
+    }
   }
+    
 
-  .top{
+  .top {
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .item-description .bottom{
-    margin-top: 30px;
-  }
-
-  .flex h5{
+  .flex {
     h5 {
       font-size: 16px;
       color: #324d67;
@@ -572,11 +615,6 @@ margin-top: 160px;
     font-size: 20px;
   }
 
-  .track {
-    animation: marquee 10s linear infinite;
-    width: 550%;
-  }
-
   .success-wrapper, .cancel-wrapper{
     min-height: 69vh;
   }
@@ -589,10 +627,10 @@ margin-top: 160px;
 
   .success{
     height: 350px;
-  }
 
-  .success h2{
-    font-size: 17px;
+    h2 {
+      font-size: 17px;
+    }
   }
   
   .btn-container{

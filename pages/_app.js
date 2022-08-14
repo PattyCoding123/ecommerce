@@ -1,6 +1,8 @@
 import '../styles/globals.scss'
+import { Toaster } from 'react-hot-toast'
 
 import { Layout } from '../components'
+import { StateContext } from '../context/StateContext'
 
 // The global stylings will now all apply to our components
 
@@ -21,13 +23,22 @@ import { Layout } from '../components'
   from Sanity in order to preload it on the page. The props we return
   from that method will be passed in the pageProps when
   the Home page is the current page being rendered on the screen.
+
+  Then, wrap the entire App in our StateContext provider so that the states
+  we want to keep track of will be available to the entire application.
+
+  Include a <Toaster /> component inside the layout for the Toast notification.
 */
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <StateContext>
+      <Layout>
+        <Toaster />
+        <Component {...pageProps} />
+      </Layout>
+    </StateContext>
   )
+   
 }
 
 export default MyApp

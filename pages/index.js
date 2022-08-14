@@ -3,6 +3,7 @@ import React from 'react'
 import { client } from '../lib/client'
 import { Product, FooterBanner, HeroBanner } from '../components'
 
+// Pass in props we get from our getServerSideProps function.
 const Home = ({ productsData, bannerData }) => {
   return (
     /* 
