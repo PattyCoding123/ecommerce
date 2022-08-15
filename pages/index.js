@@ -32,8 +32,8 @@ const Home = ({ productsData, bannerData }) => {
         can click to go to its page.
       */}
       <div className="products-heading">
-        <h2>Best Selling Product</h2>
-        <p>Headphones that amaze everyone!</p>
+        <h2>Best Selling Products</h2>
+        <p>Technology that will amaze everyone!</p>
       </div>
 
       {/*

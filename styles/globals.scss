@@ -86,7 +86,18 @@ span.text-blue {
 
 }
 
-.cart-wrapper{
+/*
+  For the cart wrapper, we want to make the width 100vw to make it take up
+  100% of the width of the brower's window size. 
+
+  The background will be black with an alpha level of 0.5 which is what gives
+  the Cart component that distinct background when the sidebar pops up on the
+  on the right.
+
+  We also want to make sure to position it zero away from the top and right
+  of the page so that it fits on the screen.
+*/
+.cart__wrapper{
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -98,17 +109,38 @@ span.text-blue {
 
 }
 
-.cart-container{
+/*
+  For the cart__container, we will style by making the height take up
+  100% of the viewport while keeping the width about 600px wide.
+
+  For the background, we want white so that our products and text can be
+  easily displayed.
+
+  We also want to make it float to the right of the cart_wrapper
+  (which is how appears on the right side of the screen).
+*/
+.cart__container{
   height: 100vh;
   width: 600px;
   background-color: white;
   float: right;
   padding: 40px 10px;
-  position: relative;
-  
+  position: relative; 
 }
 
-.cart-heading{
+/*
+  For the button heading, we will make the display flex so that the icon
+  and text appear in a row and will adjust themselves accordingly.
+
+  We want to align the items in the center, and for the text, we will
+  make them larger and bolder.
+
+  The button should also make the user's cursor a pointer when 
+  it is being hovered over.
+  
+  There should be no background or border.
+*/
+.cart__button-heading{
   display: flex;
   align-items: center;
   font-size: 18px;
@@ -118,63 +150,104 @@ span.text-blue {
   margin-left: 10px;
   border: none;
   background-color: transparent;
+
+  // For the span of text in the button, 
+  // designate some margin on the left.
+  .heading{
+    margin-left: 10px;
+  }
 }
 
-.cart-heading .heading{
-  margin-left: 10px;
-}
-
+/*
+  For the text displaying the number of items, also give
+  margin on the left and make the color red to make
+  it stand out to the user.
+*/
 .cart-num-items{
   margin-left: 10px;
   color: #f02d34;
 }
 
-.empty-cart{
+/*
+  For the cart__empty div which will display the empty text and
+  button, give some margin all around and align the text in the center.
+
+  The 40px margin helps avoid the div from expanding all the way to
+  edges of the cart__container (the white sidebar) and making the
+  button take up too much width.
+*/
+.cart__empty{
+  
   margin:40px;
   text-align:center;
+
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
 }
 
-.empty-cart h3{
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.cancel{
+.cancel {
   cursor: pointer;
 }
 
-.product-container{
+/*
+  To style the product__contianer in the cart, provide some margin at the top
+  while also marking overflow as auto. Thus, if contents are no longer visible
+  inside the padding box, then the desktop should provide a scrollwheel.
+
+  The max-height should only be 70% of the viewport.
+*/
+.product__container{
   margin-top: 15px;
   overflow: auto;
   max-height: 70vh;
   padding: 20px 10px;
 }
 
-.product{
+/*
+  For each 'product' div, we will make the display flex such that the image
+  appears first on the left.
+
+  We also want a gap of 30px between each flex item, and we will have padding
+  so each 'product' div doesn't seem to close to each other.
+*/
+.product__div{
   display: flex;
   gap: 30px;
   padding: 20px;
+
+  .cart-product-image{
+    width:180px ;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #ebebeb;
+  }
 }
 
-.product .cart-product-image{
-  width:180px ;
-  height: 150px;
-  border-radius: 15px;
-  background-color: #ebebeb;
+// For each item description, we want to style each of the nested div's
+// contained in this section.
+.product__div-description {
+
+  // For the flex stylings, the items will be displayed in flex with
+  // space between. Additionally, this div will have a set width of 350px.
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    color: #324d67;
+  }  
+
+  // For the 'bottom' class, we will make it such that these divs have a 
+  // margin-top of 60px.
+  .bottom {
+    margin-top: 60px;
+  }
 }
 
-.item-description .flex{
-  display: flex;
-  justify-content: space-between;
-  width: 350px;
-  color: #324d67;
-
-}
-
-.item-description .bottom{
-  margin-top: 60px;
-}
-
+// For items that have the flex styling, we will make the 
+// font size for the <h5> and <h4> elements slightly larger.
 .flex {
   h5 {
     font-size: 24px;
@@ -186,16 +259,18 @@ span.text-blue {
   
 }
 
+// For the div that displays the subtotal in the cart, we will make
+// the contents flex with space-between so that they move to opposite ends.
 .total {
   display: flex;
   justify-content: space-between;
+
+  h3 {
+    font-size: 22px;
+  }
 }
 
-.total h3{
-  font-size: 22px;
-
-}
-
+// For the remove-item
 .remove-item {
   font-size: 24px;
   color: #f02d34;
@@ -204,20 +279,41 @@ span.text-blue {
   border: none;
 }
 
-.cart-bottom{
+/*
+  For the cart__bottom container, we want to make the position absolute
+  to match it with the cart__container which is already positioned.
+
+  Additionally, we want to position it a little bit from the right and
+  bottom of the container.
+*/
+.cart__bottom{
   position: absolute;
   bottom: 12px;
   right: 5px;
-width: 100%;
-padding: 30px 65px;
+  width: 100%; // Make it 100% of the div
+  padding: 30px 65px;
 
 }
 
+// For the .btn-container, make the div have a width of 400px
+// and a margin of auto.
 .btn-container{
   width: 400px;
   margin: auto;
 }
 
+/*
+  For our buttons with the 'btn' styling, 
+  we want the width to be 100% of the div that the buttons will be inside
+  of while also keeping a max-width of 400px.
+
+  We also want some padding to keep the text being too close to the edges
+  of the button and we want to have some rounded corners using
+  the border-radius.
+
+  There should be no border outline and the text color should be white
+  as the background of the button will be blue.
+*/
 .btn{
   width: 100%;
   max-width: 400px;
@@ -228,16 +324,23 @@ padding: 30px 65px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: blue;
   color: #fff;
   cursor: pointer;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
+
+  /*
+    If the user decides to hover over the button, then
+    the button will increase in size as if it were 
+    popping out.
+  */
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1,1.1);
+  }
 }
 
-.btn:hover{
-  transform: scale(1.1,1.1);
-}
+
 
 /*
   To style the product__detail-container, we will make the display flex such
@@ -346,53 +449,57 @@ padding: 30px 65px;
   /*
     For the quantity section of the product__detail-description, we want to display
     the items in flex such that <h3> and <p> elements are in a row.
-
-    For the quantity__description, we the <p> element to have a solid border
-    and some padding to make it appear as if there are separate boxes
-    to increase and decrease the item quantity.
   */
   .quantity {
     display: flex;
     gap: 20px;
     margin-top: 10px;
     align-items: center;
-
-    .quantity__description {
-      border: 1px solid gray;
-      padding: 6px;
-
-      span {
-        font-size: 16px;
-        padding: 6px 12px;
-        cursor: pointer;
-      }
-
-      .minus {
-        // To make it seem as if there is a border
-        border-right: 1px solid gray;
-        color: red;
-      }
-
-      .num {
-        // To make it seem as if there is a border
-        border-right: 1px solid gray;
-        font-size: 20px;
-      }
-
-      .plus {
-        color: rgb(49, 168, 49);
-      
-      }
-
-    }
     
   }
  
 }
 
-// For the container with the buttons, we want to display the buttons using
-// flex and to have a gap so they appear more separated.
-.product__detail-description .buttons{
+/*
+  For the quantity__description, we the <p> element to have a solid border
+  and some padding to make it appear as if there are separate boxes
+  to increase and decrease the item quantity.
+
+  We will make these stylings not nested under quantity as [slug] 
+  and cart will both use these stylings.
+*/
+.quantity__description {
+  border: 1px solid gray;
+  padding: 6px;
+
+  span {
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  .minus {
+    // To make it seem as if there is a border
+    border-right: 1px solid gray;
+    color: red;
+  }
+
+  .num {
+    // To make it seem as if there is a border
+    border-right: 1px solid gray;
+    font-size: 20px;
+  }
+
+  .plus {
+    color: rgb(49, 168, 49);
+  
+  }
+
+}
+
+// For the product__detail description buttons, we want to display
+// the buttons using flex and to have a gap so they appear more separated.
+.product__detail-description .product__detail-buttons{
   display: flex;
   gap: 30px;
 
@@ -534,32 +641,44 @@ padding: 30px 65px;
   margin-top: 10px;
 }
 
+// For smaller devices, add these additional stylings to
+// the elements/components.
 @media screen and (max-width:800px) {
 
+  // Make the product__detail-container in the [slug].js 
+  // wrap the  flex items and provide some margin.
   .product__detail-container {
     flex-wrap: wrap;
     margin: 20px;
 
+    // Make the images only 350px in width and height instead of 400px.
     .product__detail-image {
       width: 350px;
       height: 350px;
     }
   }
 
-  .cart-container {
+  // For the cart__container, make the width only 415px instead of 600px
+  // and provide some additional heading.
+  .cart__container {
     width: 415px;
     padding: 4px;
   }
 
-  .cart-heading {
+  // For the cart__button-heading, provide additional margin to the top.
+  .cart__button-heading {
     margin-top: 35px;
   }
 
-  .product-container {
+  // For the product-container, provide additional margin to the top.
+  .product__container {
     margin-top: 10px;
   }
 
-  .product{
+
+  // For the product__div, give some additional padding while
+  // decreasing the size of the product's image.
+  .product__div{
     padding: 20px 5px;
 
     .cart-product-image {
@@ -568,18 +687,24 @@ padding: 30px 65px;
     }
   }
 
-
-  .buttons {
-    .add-to-cart {
-      width: 150px;
-    }
-
-    .buy-now {
+  // For the product__detail-buttons, make the add-to-cart
+  // buy-now buttons only have a width of 150px.
+  .product__detail-buttons {
+    .add-to-cart, .buy-now {
       width: 150px;
     }
   } 
 
-  .item-description {
+  /*
+    For the project__div-description, make divs with the 'flex'
+    styling only have a width of 200px.
+
+    For 'bottom' stylingss, give a margin-top of 30px.
+
+    For 'top' stylings, make flex-wrap be wrap and have the gap
+    be 10px.
+  */
+  .project__div-description {
     .flex {
       width: 200px;
     }
@@ -587,14 +712,14 @@ padding: 30px 65px;
     .bottom {
       margin-top: 30px;
     }
+
+    .top {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   }
     
-
-  .top {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
+  // For the flex stylings, make the font sizes a little smaller.
   .flex {
     h5 {
       font-size: 16px;
@@ -607,10 +732,12 @@ padding: 30px 65px;
     }
   }
  
-  .cart-bottom{
+  // For cart__bottom, give some extra padding of 30px.
+  .cart__bottom{
     padding: 30px;
   }
 
+  // Have the <h3> element of the 'total' div be slightly smaller
   .total h3{
     font-size: 20px;
   }
@@ -633,6 +760,7 @@ padding: 30px 65px;
     }
   }
   
+  // For the btn-container, have the width be 300px with auto margins.
   .btn-container{
     width: 300px;
     margin: auto;
