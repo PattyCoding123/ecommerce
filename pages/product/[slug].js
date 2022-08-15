@@ -35,7 +35,14 @@ const ProductDetails = ({ itemData, productsData }) => {
     our global state context.
   */
   const [index, setIndex] = useState(0)
-  const { decreaseQty, increaseQty, quantity, onAdd } = useStateContext();
+  const { decreaseQty, increaseQty, quantity, onAdd, setShowCart } = useStateContext();
+
+  // Event handler that will add the product to the cart right away
+  // and show the cart to the user so they can checkout immediately.
+  const handleBuyNow = () => {
+    onAdd(itemData, quantity)
+    setShowCart(true)
+  }
 
   return (
     <>
@@ -145,6 +152,10 @@ const ProductDetails = ({ itemData, productsData }) => {
             The add-to-cart button will have an onClick attribute which
             passes a callback function to invoke the onAdd handler
             which will add the current item into the cart.
+
+            The buy-now button will add the current item (on the slug page)
+            along with the current quantity to the cart and then open the cart
+            so that the user can immediately press the checkout button.
           */}
           <div className="product__detail-buttons">
             <button 
@@ -157,6 +168,7 @@ const ProductDetails = ({ itemData, productsData }) => {
             <button 
               type="button"
               className="buy-now"
+              onClick={handleBuyNow}
             >
               Buy Now!
             </button>
