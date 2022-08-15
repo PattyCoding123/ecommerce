@@ -6,11 +6,42 @@ import toast from 'react-hot-toast'
 
 import { useStateContext } from '../context/StateContext'
 import { urlFor } from '../lib/client'
+import getStripe from '../lib/getStripe'
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart,
   toggleCartItemQuantity, onRemove } = useStateContext()
+
+  // The following event handler will try and redirect the 
+  // user to the Stripe checkout page with their cart.
+  const handleCheckout = async () => {
+    // Get an instance of a Stripe promise
+    const stripe = await getStripe();
+
+    // Make API request from our Next.js backend.
+    // First argument is the API route, and the second is the initialization.
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // Remember, we must stringify our data for the body
+      body: JSON.stringify(cartItems),
+    });
+
+    // If our statusCode from the response is 500, return since
+    // something went wrong on the server side.
+    if(response.statusCode === 500) return;
+
+    // Get our data by turning the response from the
+    // API fetch into a JSON object.
+    const data = await response.json();
+
+    toast.loading('Redirecting...');
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  }
 
   /*
     The Cart Component will be visible throughout all pages in the 
@@ -149,7 +180,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="btn"
-                onClick=""
+                onClick={handleCheckout}
               >
                 Pay with Stripe
               </button>
