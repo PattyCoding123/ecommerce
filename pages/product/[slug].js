@@ -68,7 +68,8 @@ const ProductDetails = ({ itemData, productsData }) => {
               For each small image, we will give each 
             */}
             {image?.map((item, i) => (
-              <img 
+              <img
+                key={i} 
                 src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
@@ -145,7 +146,7 @@ const ProductDetails = ({ itemData, productsData }) => {
             passes a callback function to invoke the onAdd handler
             which will add the current item into the cart.
           */}
-          <div className="buttons">
+          <div className="product__detail-buttons">
             <button 
               type="button"
               className="add-to-cart"
@@ -156,7 +157,6 @@ const ProductDetails = ({ itemData, productsData }) => {
             <button 
               type="button"
               className="buy-now"
-              onClick=""
             >
               Buy Now!
             </button>
