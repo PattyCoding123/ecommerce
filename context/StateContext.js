@@ -1,5 +1,5 @@
 import { React, createContext, 
-  useContext, useState, useEffect } from 'react'
+  useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 
 // Create Context Component that we will use in our

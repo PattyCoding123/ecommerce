@@ -62,7 +62,7 @@ export default async function handler(req, res) {
 				// Here, we have the options to redirect the user to 
 				// another url depending if they completed or cancelled their purchase.
         success_url: `${req.headers.origin}/success`, // Send user to success page.
-        cancel_url: `${req.headers.origin}/?canceled=true`,
+        cancel_url: `${req.headers.origin}/?canceled=true`, // Send user to previous page.
       }
 
       // Create Checkout Sessions from body params.

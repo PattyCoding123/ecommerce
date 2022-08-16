@@ -182,22 +182,26 @@ const ProductDetails = ({ itemData, productsData }) => {
 
         It will appear below everything in the "product__details-container"
       */}
-      <div
-        className="maylike-products-wrapper"
-      >
+      <div className="maylike-products-wrapper">
         <h2>You may also like: </h2>
-
         {/*
-          The following div will contain a mapping of Product components
-          similar to the ones found on the homepage. We will use the array of
-          products that is returned from the getStaticProps 
+          The following div will be the container for the marquee of products
+          that will animate across the page.
         */}
-        <div
-          className="maylike-products-container"
-        >
-          {productsData.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
+        <div className="marquee">
+          {/*
+            The following div will contain a mapping of Product components
+            similar to the ones found on the homepage. We will use the array of
+            products that is returned from the getStaticProps.
+            
+            As mentioned previously, they will animate across the div
+            because of the 'track' styling.
+          */}
+          <div className="maylike-products-container track">
+            {productsData.map((product) => (
+              <Product key={product._id} product={product} />
+            ))}
+          </div>
         </div>
       </div>
     </>

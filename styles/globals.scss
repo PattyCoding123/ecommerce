@@ -439,11 +439,6 @@ span.text-blue {
     font-size: 26px;
     margin-top: 30px;
     color: blue;
-
-    .old-price, .product-price .old-price, .price .old-price{
-      color: gray;
-      text-decoration: line-through;
-    }
   }
 
   /*
@@ -526,6 +521,11 @@ span.text-blue {
     &:hover{
       transform: scale(1.1,1.1)
     }
+
+    // For smaller screens, make width only 150px.
+    @media screen and (max-width:800px) {
+      width: 150px
+    }
   }
 
   // We will style the buy-now button similar to the add-to-cart button.
@@ -546,6 +546,10 @@ span.text-blue {
       transform:scale(1.1,1.1)
     }
     
+    // For smaller screens, make width only 150px.
+    @media screen and (max-width:800px) {
+      width: 150px
+    }
   }
 }
 
@@ -576,18 +580,67 @@ span.text-blue {
   margin-top: 20px;
 }
 
+/*
+  For the marquee section of products, make the height 400px while taking up 100% of
+  the div it is located in.
+
+  Also, if there are too many items in the x-axis, make them hidden as they will animate
+  across the screen.
+*/
+.marquee {
+  position: relative; 
+  height: 400px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// To make the products move, we will use a linear animation that goes on for 15 seconds
+// and take up 180% of the div width.
+.track {
+  position: absolute; // Position relative to the marquee div
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+  width: 180%;
+
+  // Stop the scrolling animation if the user hovers
+  // over the div.
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+// To move items to the left of the div, starting at the center.
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .max-qty{
   font-weight: 500;
   color: #f02d34;
 }
 
-.success-wrapper, .cancel-wrapper{
+// For the success wrapper, make the background white 
+// and make the minimum height 60% of the viewport.
+.success-wrapper {
   background-color: white;
   min-height: 60vh;
 
 }
 
-.success, .cancel{
+/*
+  For the success div which contains the icon, <p> elements, and
+  and Link component, make the width 1000px while also keeping the
+  margin auto and margin-top 160px.
+
+  For the padding, there should be about 50px all around to keep 
+  the text and buttons from being too close to the edges of the box.
+
+  The children of the div will be flex items in the vertical (column)
+  direction. All items will be aligned and justified in the center.
+*/
+  .success  {
   width: 1000px;
   margin: auto;
   margin-top: 160px;
@@ -598,43 +651,40 @@ span.text-blue {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
++ 
+  // The shopping bag icon will be green and 40px in size.
+  .icon {
+    color: green;
+    font-size: 40px;
+ }
 
-.success .icon {
-   color: green;
-   font-size: 40px;
-}
+  // For the <h2> element, the text-transform will be capitalize
+  // and there will also be some extra font-weight and size.
+  h2 {
+    text-transform: capitalize;
+    margin-top: 15px 0px;
+    font-weight: 900;
+    font-size: 40px;
+    color:#324d67;
+  }
 
-.success h2{
-  text-transform: capitalize;
-  margin-top: 15px 0px;
-  font-weight: 900;
-  font-size: 40px;
-  color:#324d67;
-}
+  // For the gratitude message, it will be bolder, larger,
+  // and aligned in the center of the flex row.
+  .gratitude-msg {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+ }
 
-.success .email-msg{
-   font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.cancel p{
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.success .description{
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  margin: 10px;
-  margin-top: 30px;
-}
-
-.success .description .email{
-  margin-left: 5px;
-  color: #f02d34;
+  // For the description message, make the font bolder
+  // and center-aligned.
+  .description {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px;
+    margin-top: 30px;
+  }
 }
 
 .product-max-qty{
@@ -687,14 +737,6 @@ span.text-blue {
     }
   }
 
-  // For the product__detail-buttons, make the add-to-cart
-  // buy-now buttons only have a width of 150px.
-  .product__detail-buttons {
-    .add-to-cart, .buy-now {
-      width: 150px;
-    }
-  } 
-
   /*
     For the project__div-description, make divs with the 'flex'
     styling only have a width of 200px.
@@ -742,23 +784,33 @@ span.text-blue {
     font-size: 20px;
   }
 
-  .success-wrapper, .cancel-wrapper{
-    min-height: 69vh;
+  // For the marquee animation, make the duration only 10 seconds
+  // but taking up 550% of the div width.
+  .track {
+    animation: marquee 10s linear infinite;
+    width: 550%;
   }
 
-  .success, .cancel {
+  // For the success-wrapper, make the min-height 70% of the 
+  // viewport instead of 60.
+  .success-wrapper {
+    min-height: 70vh;
+  }
+
+  // For the success styling, make the widht 370px instead of 1000 
+  // and make the height 350px.
+  .success {
     width: 370px;
     margin-top: 100px;
     padding: 20px;
-  }
-
-  .success{
     height: 350px;
 
+    // The <h2> element will only be slightly larger.
     h2 {
       font-size: 17px;
     }
   }
+
   
   // For the btn-container, have the width be 300px with auto margins.
   .btn-container{
