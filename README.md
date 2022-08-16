@@ -78,6 +78,7 @@ is just a personal project to make an ecommerce website).
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+## Getting Started
 
 First, run the development server:
 
