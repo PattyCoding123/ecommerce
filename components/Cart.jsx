@@ -167,8 +167,8 @@ const Cart = () => {
 
           For the price div, two <h3> elements will display the user's subtotal.
 
-          For the button div, it will take the user to the payment page integrated
-          with Stripe.
+          For the button div, when pressed, it will take the user to the payment page 
+          integrated with Stripe using the handleCheckout event handler.
         */}
         {cartItems.length >= 1 && (
           <div className="cart__bottom">

@@ -35,7 +35,14 @@ const ProductDetails = ({ itemData, productsData }) => {
     our global state context.
   */
   const [index, setIndex] = useState(0)
-  const { decreaseQty, increaseQty, quantity, onAdd } = useStateContext();
+  const { decreaseQty, increaseQty, quantity, onAdd, setShowCart } = useStateContext();
+
+  // Event handler that will add the product to the cart right away
+  // and show the cart to the user so they can checkout immediately.
+  const handleBuyNow = () => {
+    onAdd(itemData, quantity)
+    setShowCart(true)
+  }
 
   return (
     <>
@@ -145,6 +152,10 @@ const ProductDetails = ({ itemData, productsData }) => {
             The add-to-cart button will have an onClick attribute which
             passes a callback function to invoke the onAdd handler
             which will add the current item into the cart.
+
+            The buy-now button will add the current item (on the slug page)
+            along with the current quantity to the cart and then open the cart
+            so that the user can immediately press the checkout button.
           */}
           <div className="product__detail-buttons">
             <button 
@@ -157,6 +168,7 @@ const ProductDetails = ({ itemData, productsData }) => {
             <button 
               type="button"
               className="buy-now"
+              onClick={handleBuyNow}
             >
               Buy Now!
             </button>
@@ -170,22 +182,26 @@ const ProductDetails = ({ itemData, productsData }) => {
 
         It will appear below everything in the "product__details-container"
       */}
-      <div
-        className="maylike-products-wrapper"
-      >
+      <div className="maylike-products-wrapper">
         <h2>You may also like: </h2>
-
         {/*
-          The following div will contain a mapping of Product components
-          similar to the ones found on the homepage. We will use the array of
-          products that is returned from the getStaticProps 
+          The following div will be the container for the marquee of products
+          that will animate across the page.
         */}
-        <div
-          className="maylike-products-container"
-        >
-          {productsData.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
+        <div className="marquee">
+          {/*
+            The following div will contain a mapping of Product components
+            similar to the ones found on the homepage. We will use the array of
+            products that is returned from the getStaticProps.
+            
+            As mentioned previously, they will animate across the div
+            because of the 'track' styling.
+          */}
+          <div className="maylike-products-container track">
+            {productsData.map((product) => (
+              <Product key={product._id} product={product} />
+            ))}
+          </div>
         </div>
       </div>
     </>

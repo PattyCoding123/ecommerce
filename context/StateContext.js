@@ -1,5 +1,5 @@
 import { React, createContext, 
-  useContext, useState, useEffect } from 'react'
+  useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 
 // Create Context Component that we will use in our
@@ -195,6 +195,9 @@ export const StateContext = ({ children }) => {
 				totalQuantities,
 				quantity,
 				setShowCart,
+				setCartItems,
+				setTotalPrice,
+				setTotalQuantities,
 				increaseQty,
 				decreaseQty,
 				resetQty,
