@@ -1,7 +1,6 @@
 import { React, useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus,
 AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import Image from 'next/image'
 
 import { client, urlFor } from '../../lib/client'
 import { Product } from '../../components'
@@ -66,7 +65,7 @@ const ProductDetails = ({ itemData, productsData }) => {
       <div className="product__detail-container">
         <div>
           <div className="image__container">
-              <Image src={urlFor(image && image[index])} alt={name} className="product__detail-image"/>
+              <img src={urlFor(image && image[index])} alt={name} className="product__detail-image"/>
           </div>
 
           <div
@@ -76,10 +75,10 @@ const ProductDetails = ({ itemData, productsData }) => {
               For each small image, we will give each 
             */}
             {image?.map((item, i) => (
-              <Image
+              <img
                 key={i} 
                 src={urlFor(item)}
-                alt={`altImage ${i}`}
+                alt={`alt-image ${i}`}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
               />
