@@ -1,6 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
-## Getting Started
+<!-- PROJECT SHIELDS -->
+<!--
+*** Reference link notation in markdown. Look at the bottom of the file
+*** for all links to the shields.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/PattyCoding123/ecommerce">
+    <img src="src/assets/about04.png" alt="Logo" width="80" height="80">
+  </a>
+  
+<h1 align="center">My Personal Portfolio</h1>
+
+  <p align="center">
+    My Personal Porfolio is a portfolio project that was programmed using React.js for the front-end and Sanity.io for the back-end content management.
+    <br />
+    <a href="https://github.com/PattyCoding123/ecommerce"><strong>Check out the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://patrickducusinportfolio.dev">View Website</a>
+    ·
+    <a href="https://github.com/PattyCoding123/ecommerce/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/PattyCoding123/ecommerce/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Look at the live demo!][product-screenshot]](https://patrickducusinportfolio.dev)
+
+As mentioned earlier, the project is a fully responsive personal porfolio website that I could use to display my skills and experiences. The entire front-end code was done using React.js, and I configured Sanity in JavaScript to assist with the back-end data management. I initialized the project using the npx create-react-app command, and I connected a Sanity client to the components in order to avoid hardcoding my data into the front-end. Now, I can add more skills, job experiences, and descriptions without needing to code them all in the front-end. Additionally, with the styling, the website is fully functional on many mobile devices. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+* [![React][React.js]][React-url]
+* [![Next.js][React.js]][Next-url]
+* [Sanity.io](https://www.sanity.io/)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
 
 First, run the development server:
 
@@ -18,17 +88,66 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn more about Next.js, take a look at the following resources:
+<!-- ROADMAP -->
+## Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] Navigation Links to different sections
+- [x] Animations for different sections
+- [x] Working links to websites for social media and projects
+- [x] Animations for different sections
+- [x] Back-end content management 
+- [x] Contact form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+See the [open issues](https://github.com/PattyCoding123/ecommerce/issues) for a full list of proposed features (and known issues).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+If you have a suggestion that would make this project better or more optimal, please fork the repo and create a pull request. Alternatively, you can open an issue with the tag "enhancement" as well.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'Add some NewFeature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.md` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Patrick Ducusin - patrickducusin2@gmail.com
+
+Project Link: [https://github.com/PattyCoding123/ecommerce](https://github.com/PattyCoding123/ecommerce)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[license-shield]: https://img.shields.io/github/license/PattyCoding123/ecommerce?color=%23808080&style=for-the-badge
+[license-url]: https://github.com/PattyCoding123/ecommerce/blob/master/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/patrick-ducusin-879b25208/
+[product-screenshot]: src/assets/demo.png
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
