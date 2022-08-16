@@ -16,10 +16,10 @@
     <img src="assets/headphones_b_2.webp" alt="Logo" width="80" height="80">
   </a>
   
-<h1 align="center">My Personal Portfolio</h1>
+<h1 align="center">Ecommerce</h1>
 
   <p align="center">
-    "ecommerce" is a project in which I created a simple yet stunning ecommerce website that
+    "Ecommerce" is a project in which I created a simple yet stunning eCommerce website that
     handles cart/item management and full payment functionality.
     <br />
     <a href="https://github.com/PattyCoding123/ecommerce"><strong>Check out the docs »</strong></a>
