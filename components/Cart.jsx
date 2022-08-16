@@ -1,5 +1,6 @@
 import { React, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShoppingCart } from 'react-icons/ai'
 import { TiDeleteOutline } from 'react-icons/ti'
 import toast from 'react-hot-toast'
@@ -109,8 +110,9 @@ const Cart = () => {
         <div className="product__container">
           {cartItems.length >= 1 && cartItems.map((item) => (
             <div className="product__div" key={item._id}>
-              <img 
+              <Image 
                 src={urlFor(item?.image[0])}
+                alt={item.name}
                 className="cart-product-image"
               /> 
               <div className="product__div-description">
