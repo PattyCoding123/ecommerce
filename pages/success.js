@@ -6,8 +6,6 @@ import { useStateContext } from '../context/StateContext'
 import { runConfetti } from '../lib/utils'
 
 const success = () => {
-	const { setCartItems, setTotalPrice, setTotalQuantities, resetQty } = useStateContext()
-	
 	/*
 		When the success page is rendered, it will reset many states for the user 
 		to coincide with their completed purchase.
@@ -16,6 +14,7 @@ const success = () => {
 		state, set totalPrice and totalQuantities state to 0, and run confetti.
 	*/
 	useEffect(() => {
+		const { setCartItems, setTotalPrice, setTotalQuantities, resetQty } = useStateContext()
 		resetQty()
 		setCartItems([])
 		setTotalPrice(0)
