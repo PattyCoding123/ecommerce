@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className={styles["navbar__container"]}>
       <p className={styles["navbar__logo"]}>
-        <Link href="/">Patrick's Web Store</Link>
+        <Link href="/">Patrick's Online Store</Link>
       </p>
 
       {/*

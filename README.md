@@ -73,7 +73,7 @@ is just a personal project to make an ecommerce website).
 ### Built With
 
 * [![React][React.js]][React-url]
-* [![Next.js][React.js]][Next-url]
+* [![Next.js][Next.js]][Next-url]
 * [Sanity.io](https://www.sanity.io/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
