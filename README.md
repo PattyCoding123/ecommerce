@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/PattyCoding123/ecommerce">
-    <img src="assets/speaker2.webp" alt="Logo" width="80" height="80">
+    <img src="assets/headphones_b_2.webp" alt="Logo" width="80" height="80">
   </a>
   
 <h1 align="center">My Personal Portfolio</h1>
@@ -58,7 +58,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Look at the live demo!][product-screenshot]](https://patrickducusinportfolio.dev)
+[![Look at the live demo!][product-screenshot]](https://ecommerce-pattycoding123.vercel.app/)
 
 The project is a fully responsive ecommerce website that handles full payment functionalities. 
 The entire front-end code was done using React.js, and I configured Sanity in JavaScript to 
