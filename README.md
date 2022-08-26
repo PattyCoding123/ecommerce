@@ -80,7 +80,14 @@ is just a personal project to make an ecommerce website).
 <!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+First, run npm install to acquire dependencies
+```bash
+npm install
+# or
+yarn add
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
