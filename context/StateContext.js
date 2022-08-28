@@ -155,7 +155,7 @@ export const StateContext = ({ children }) => {
 		} else {
 
 			/*
-				If the user pressed the 0 button, we will  call the .map array on the cartItems
+				If the user pressed the - button, we will  call the .map array on the cartItems
 				state and return either the same item, OR if we found the current product we are 
 				modifying, we will return a new object at its place with the same properties and
 				a new updated quantity (minus 1). This way, we do not need to worry about 
